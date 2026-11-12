@@ -109,9 +109,13 @@ dotnet_diagnostic.IDE0055.severity = warning
 csharp_style_expression_bodied_properties = when_on_single_line:suggestion
 dotnet_diagnostic.IDE0025.severity = suggestion
 
-# Methods should have a normal block body, not => expressions.
-csharp_style_expression_bodied_methods = false:warning
-dotnet_diagnostic.IDE0022.severity = warning
+# Allow one-line expression-bodied methods without warnings.
+# Expression bodies are not required; block-bodied methods remain valid.
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+dotnet_diagnostic.IDE0022.severity = none
+
+# Rider: do not flag either method-body style for conversion.
+resharper_arrange_method_or_operator_body_highlighting = none
 
 # ------------------------------------------------------------
 # Namespace / usings
